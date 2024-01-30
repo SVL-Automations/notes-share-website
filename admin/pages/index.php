@@ -67,7 +67,7 @@ if (isset($_POST['data'])) {
 
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
   <!-- Site wrapper -->
   <div class="wrapper">
 
@@ -75,74 +75,76 @@ if (isset($_POST['data'])) {
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h4>
-          <?= $project ?>
-          <small><?= $slogan ?></small>
-        </h4>
-        <ol class="breadcrumb">
-          <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Admin</a></li>
-          <li class="active">Dashboard</li>
-        </ol>
-      </section>
+      <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h4>
+            <?= $project ?>
+            <small><?= $slogan ?></small>
+          </h4>
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Admin</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
 
-      <!-- Main content -->
-      <section class="content">
-        <div class="row">
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-              <div class="inner">
-                <h3 id="admin">150</h3>
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3 id="admin">150</h3>
 
-                <p>Total admin</p>
+                  <p>Total admin</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-user-secret"></i>
+                </div>
+                <a href="rptadmin.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="fa fa-user-secret"></i>
-              </div>
-              <a href="rptadmin.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-          </div>
 
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-              <div class="inner">
-                <h3 id="department">44</h3>
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3 id="department">44</h3>
 
-                <p>Total departments</p>
+                  <p>Total departments</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-institution"></i>
+                </div>
+                <a href="rptdepartment.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="fa fa-institution"></i>
-              </div>
-              <a href="rptdepartment.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-          </div>
-          <!-- ./col -->
+            <!-- ./col -->
 
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-maroon">
-              <div class="inner">
-                <h3 id="faculties">44</h3>
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-maroon">
+                <div class="inner">
+                  <h3 id="faculties">44</h3>
 
-                <p>Total staff</p>
+                  <p>Total staff</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-group"></i>
+                </div>
+                <a href="rptstaff.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="fa fa-group"></i>
-              </div>
-              <a href="rptstaff.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
+            <!-- ./col -->
+            <!-- ./col -->
           </div>
-          <!-- ./col -->
-          <!-- ./col -->
-        </div>
-      </section>
-      <!-- /.content -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
     </div>
-    <!-- /.content-wrapper -->
 
     <?php include("footer.php"); ?>
 

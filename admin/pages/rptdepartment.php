@@ -53,12 +53,12 @@ if (isset($_POST['Add'])) {
     $email1 = array();
 
     $name = mysqli_real_escape_string($connection, trim(strip_tags($_POST["name"])));
-    $code = mysqli_real_escape_string($connection, trim(strip_tags($_POST["code"])));    
+    $code = mysqli_real_escape_string($connection, trim(strip_tags($_POST["code"])));
 
     if (mysqli_query($connection, "INSERT INTO `department`
                                     (`name`, `code`, `status`)
                                     values
-                                    ('$name', '$code','1')")) {       
+                                    ('$name', '$code','1')")) {
 
         $msg->value = 1;
         $msg->data = "Department Added Successfully. ";
@@ -143,7 +143,7 @@ if (isset($_POST['Edit'])) {
     </style>
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -151,69 +151,71 @@ if (isset($_POST['Edit'])) {
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h4>
-                    <?= $project ?>
-                    <small><?= $slogan ?></small>
-                </h4>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">Admin</a></li>
-                    <li class="active">Department</li>
-                </ol>
-            </section>
+            <div class="container">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h4>
+                        <?= $project ?>
+                        <small><?= $slogan ?></small>
+                    </h4>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">Admin</a></li>
+                        <li class="active">Department</li>
+                    </ol>
+                </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Default box -->
-                        <div class="box box-primary">
-                            <div class="box-header with-border">
-                                <h3 class="box-title"> Department Details</h3>
-                                <a class="btn btn-social-icon btn-primary pull-right" style="margin:5px" title="Add Department" data-toggle="modal" data-target="#modaladddepartment"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="alert " id="alertclass" style="display: none">
-                                <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
-                                <p id="msg"></p>
-                            </div>
-                            <!-- /.box-header -->
-                            <!-- form start -->
-                            <div class="box-body  table-responsive">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class='text-center'>Id</th>
-                                            <th class='text-center'>Name</th>
-                                            <th class='text-center'>Code</th>                                            
-                                            <th class='text-center'>Status</th>
-                                            <th class='text-center'>Update</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tbody">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Default box -->
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"> Department Details</h3>
+                                    <a class="btn btn-social-icon btn-primary pull-right" style="margin:5px" title="Add Department" data-toggle="modal" data-target="#modaladddepartment"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="alert " id="alertclass" style="display: none">
+                                    <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
+                                    <p id="msg"></p>
+                                </div>
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <div class="box-body  table-responsive">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>Id</th>
+                                                <th class='text-center'>Name</th>
+                                                <th class='text-center'>Code</th>
+                                                <th class='text-center'>Status</th>
+                                                <th class='text-center'>Update</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody">
 
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class='text-center'>Id</th>
-                                            <th class='text-center'>Name</th>
-                                            <th class='text-center'>Code</th>                                            
-                                            <th class='text-center'>Status</th>
-                                            <th class='text-center'>Update</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th class='text-center'>Id</th>
+                                                <th class='text-center'>Name</th>
+                                                <th class='text-center'>Code</th>
+                                                <th class='text-center'>Status</th>
+                                                <th class='text-center'>Update</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                             </div>
+                            <!-- /.box-body -->
+                            <!-- /.box-footer-->
                         </div>
-                        <!-- /.box-body -->
-                        <!-- /.box-footer-->
                     </div>
-                </div>
-            </section>
-            <!-- /.content -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
         </div>
-        <!-- /.content-wrapper -->
         <!-- Add department User modal -->
         <form id="adddepartment" action="" method="post">
             <div class="modal fade" id="modaladddepartment" style="display: none;">
@@ -237,7 +239,7 @@ if (isset($_POST['Edit'])) {
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enter Code</label>
                                 <input type="text" class="form-control" placeholder="Enter Code" name="code" id="code" required pattern="[a-zA-Z]+">
-                           </div>                           
+                            </div>
 
                         </div>
                         <div class="modal-footer ">
@@ -268,7 +270,7 @@ if (isset($_POST['Edit'])) {
                             <div class="alert " id="editalertclass" style="display: none">
                                 <button type="button" class="close" onclick="$('#editalertclass').hide()">×</button>
                                 <p id="editmsg"></p>
-                            </div>                            
+                            </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Enter Name</label>
@@ -352,7 +354,7 @@ if (isset($_POST['Edit'])) {
                             srno++;
                             var update = "";
                             var datatext = 'data-editid="' + value.id + '" data-status="' + value.status +
-                                '" data-name="' + value.name + '" data-code="' + value.code +'"';
+                                '" data-name="' + value.name + '" data-code="' + value.code + '"';
 
                             var editbutton = '<button type="submit" name="Edit" id="edit" ' +
                                 datatext +
@@ -372,7 +374,7 @@ if (isset($_POST['Edit'])) {
                             var html = '<tr class="odd gradeX">' +
                                 '<td class="text-center">' + srno + '</td>' +
                                 '<td class="text-center">' + value.name + ' </td>' +
-                                '<td class="text-center">' + value.code + '</td>' +                                
+                                '<td class="text-center">' + value.code + '</td>' +
                                 '<td class="text-center">' + value.status + '</td>' +
                                 '<td class="text-center">' + editbutton + update + '</td>' +
                                 '</tr>';
@@ -463,7 +465,7 @@ if (isset($_POST['Edit'])) {
                 $('#editalertclass').removeClass();
                 $('#editmsg').empty();
                 $(".modal-body #editname").val($(this).data('name'));
-                $(".modal-body #editcode").val($(this).data('code'));                
+                $(".modal-body #editcode").val($(this).data('code'));
                 $("#editid").val($(this).data('editid'));
             });
 

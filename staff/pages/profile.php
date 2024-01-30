@@ -40,6 +40,7 @@ if (isset($_POST['changeprofile'])) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,7 +71,7 @@ if (isset($_POST['changeprofile'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
   <!-- Site wrapper -->
   <div class="wrapper">
 
@@ -78,67 +79,68 @@ if (isset($_POST['changeprofile'])) {
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h4>
-          <?= $project ?>
-          <small><?= $slogan ?></small>
-        </h4>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Staff</a></li>
-          <li class="active">Profile Update</li>
-        </ol>
-      </section>
+      <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h4>
+            <?= $project ?>
+            <small><?= $slogan ?></small>
+          </h4>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Staff</a></li>
+            <li class="active">Profile Update</li>
+          </ol>
+        </section>
 
-      <!-- Main content -->
-      <section class="content">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-6">
-            <!-- general form elements -->
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">Staff Profile Update</h3>
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Staff Profile Update</h3>
+                </div>
+                <div class="alert " id="alertclass" style="display: none">
+                  <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
+                  <p id="msg"></p>
+                </div>
+
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id="changesuperprofile" action="" method="post">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" id="username" placeholder="Enter Username" required name="username" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Enter Name</label>
+                      <input type="text" class="form-control" id="name" placeholder="Enter First Name" required name="name" pattern="[A-Za-z\s]+">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1"> Mobile Number </label>
+                      <input type="number" name="mobile" class="form-control" id="mobile" placeholder="Enter Mobile Number" required min="2000000000" max="9999999999" pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="box-footer">
+                      <input type="hidden" name="changeprofile" id="changeprofile" value="changeprofile">
+                      <button type="submit" class="btn btn-success" name="submit">Update</button>
+                      <button type="reset" class="btn btn-warning">Reset</button>
+                    </div>
+                </form>
               </div>
-              <div class="alert " id="alertclass" style="display: none">
-                <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
-                <p id="msg"></p>
-              </div>
-
-              <!-- /.box-header -->
-              <!-- form start -->
-              <form role="form" id="changesuperprofile" action="" method="post">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter Username" required name="username" readonly>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Enter Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter First Name" required name="name" pattern="[A-Za-z\s]+">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputPassword1"> Mobile Number </label>
-                    <input type="number" name="mobile" class="form-control" id="mobile" placeholder="Enter Mobile Number" required min="2000000000" max="9999999999" pattern="[0-9]{10}">
-                  </div>                 
-
-                  <div class="box-footer">
-                    <input type="hidden" name="changeprofile" id="changeprofile" value="changeprofile">
-                    <button type="submit" class="btn btn-success" name="submit">Update</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
-                  </div>
-              </form>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- /.content -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
     </div>
-    <!-- /.content-wrapper -->
-
     <?php include("footer.php"); ?>
 
   </div>
@@ -169,7 +171,7 @@ if (isset($_POST['changeprofile'])) {
         success: function(response) {
           var returnedData = JSON.parse(response);
           $("#username").attr("value", returnedData[0][0]['email']);
-          $("#name").attr("value", returnedData[0][0]['name']);          
+          $("#name").attr("value", returnedData[0][0]['name']);
           $("#mobile").attr("value", returnedData[0][0]['mobile']);
         }
       });
@@ -200,4 +202,5 @@ if (isset($_POST['changeprofile'])) {
     })
   </script>
 </body>
+
 </html>

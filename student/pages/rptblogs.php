@@ -60,7 +60,7 @@ if (isset($_POST['tabledata'])) {
     </style>
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -68,69 +68,70 @@ if (isset($_POST['tabledata'])) {
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h4>
-                    <?= $project ?>
-                    <small><?= $slogan ?></small>
-                </h4>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">Student</a></li>
-                    <li class="active">Blog</li>
-                </ol>
-            </section>
+            <div class="container">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h4>
+                        <?= $project ?>
+                        <small><?= $slogan ?></small>
+                    </h4>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">Student</a></li>
+                        <li class="active">Blog</li>
+                    </ol>
+                </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Default box -->
-                        <div class="box box-primary">
-                            <div class="box-header with-border">
-                                <h3 class="box-title"> Blog Details</h3>
-                            </div>
-                            <div class="alert " id="alertclass" style="display: none">
-                                <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
-                                <p id="msg"></p>
-                            </div>
-                            <!-- /.box-header -->
-                            <!-- form start -->
-                            <div class="box-body  table-responsive">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class='text-center'>Id</th>
-                                            <th class='text-center'>Staff Name</th>
-                                            <th class='text-center'>Title</th>
-                                            <th class='text-center'>Summary</th>
-                                            <th class='text-center'>Update</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tbody">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Default box -->
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"> Blog Details</h3>
+                                </div>
+                                <div class="alert " id="alertclass" style="display: none">
+                                    <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
+                                    <p id="msg"></p>
+                                </div>
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <div class="box-body  table-responsive">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>Id</th>
+                                                <th class='text-center'>Staff Name</th>
+                                                <th class='text-center'>Title</th>
+                                                <th class='text-center'>Summary</th>
+                                                <th class='text-center'>Update</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody">
 
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class='text-center'>Id</th>
-                                            <th class='text-center'>Staff Name</th>
-                                            <th class='text-center'>Title</th>
-                                            <th class='text-center'>Summary</th>
-                                            <th class='text-center'>Update</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th class='text-center'>Id</th>
+                                                <th class='text-center'>Staff Name</th>
+                                                <th class='text-center'>Title</th>
+                                                <th class='text-center'>Summary</th>
+                                                <th class='text-center'>Update</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                             </div>
+                            <!-- /.box-body -->
+                            <!-- /.box-footer-->
                         </div>
-                        <!-- /.box-body -->
-                        <!-- /.box-footer-->
                     </div>
-                </div>
-            </section>
-            <!-- /.content -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
         </div>
-        <!-- /.content-wrapper -->
-
         <?php include("footer.php"); ?>
 
     </div>

@@ -60,7 +60,7 @@ if (isset($_POST['data'])) {
 
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
   <!-- Site wrapper -->
   <div class="wrapper">
 
@@ -68,58 +68,59 @@ if (isset($_POST['data'])) {
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h4>
-          <?= $project ?>
-          <small><?= $slogan ?></small>
-        </h4>
-        <ol class="breadcrumb">
-          <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Staff</a></li>
-          <li class="active">Dashboard</li>
-        </ol>
-      </section>
+      <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h4>
+            <?= $project ?>
+            <small><?= $slogan ?></small>
+          </h4>
+          <ol class="breadcrumb">
+            <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Staff</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
 
-      <!-- Main content -->
-      <section class="content">
-        <div class="row">
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-              <div class="inner">
-                <h3 id="intime">10</h3>
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3 id="intime">10</h3>
 
-                <p>Uploaded Notes</p>
+                  <p>Uploaded Notes</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-sign-in"></i>
+                </div>
+                <a href="rptattendance.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="fa fa-sign-in"></i>
-              </div>
-              <a href="rptattendance.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-          </div>
 
-          <div class="col-lg-2 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-purple">
-              <div class="inner">
-                <h3 id="outtime">2</h3>
+            <div class="col-lg-4 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-purple">
+                <div class="inner">
+                  <h3 id="outtime">2</h3>
 
-                <p>Alloted Subjects</p>
+                  <p>Alloted Subjects</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-sign-out"></i>
+                </div>
+                <a href="rptattendance.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-              <div class="icon">
-                <i class="fa fa-sign-out"></i>
-              </div>
-              <a href="rptattendance.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
+            <!-- ./col -->
           </div>
-          <!-- ./col -->
-        </div>
-      </section>
-      <!-- /.content -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
     </div>
-    <!-- /.content-wrapper -->
-
     <?php include("footer.php"); ?>
 
   </div>
@@ -164,7 +165,7 @@ if (isset($_POST['data'])) {
 
             var returnedData = JSON.parse(response);
             console.log(returnedData);
-            
+
           }
         });
       }

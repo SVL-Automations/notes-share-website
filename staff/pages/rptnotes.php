@@ -131,7 +131,7 @@ if (isset($_POST['Add'])) {
     </style>
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
     <!-- Site wrapper -->
     <div class="wrapper">
 
@@ -139,80 +139,82 @@ if (isset($_POST['Add'])) {
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h4>
-                    <?= $project ?>
-                    <small><?= $slogan ?></small>
-                </h4>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="#">Staff</a></li>
-                    <li class="active">Notes</li>
-                </ol>
-            </section>
+            <div class="container">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h4>
+                        <?= $project ?>
+                        <small><?= $slogan ?></small>
+                    </h4>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li class="active">Notes</li>
+                    </ol>
+                </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Default box -->
-                        <div class="box box-primary">
-                            <div class="box-header with-border">
-                                <h3 class="box-title"> Notes</h3>
-                                <a class="btn btn-social-icon btn-primary pull-right" style="margin:5px" title="Add Notes" data-toggle="modal" data-target="#modaladdnotes"><i class="fa fa-plus"></i></a>
-                            </div>
-                            <div class="alert " id="alertclass" style="display: none">
-                                <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
-                                <p id="msg"></p>
-                            </div>
-                            <!-- /.box-header -->
-                            <!-- form start -->
-                            <div class="box-body  table-responsive">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class='text-center'>Id</th>
-                                            <th class='text-center'>Staff Name</th>
-                                            <th class='text-center'>Subject Name</th>
-                                            <th class='text-center'>Class</th>
-                                            <th class='text-center'>File Name</th>
-                                            <th class='text-center'>File Type</th>
-                                            <th class='text-center'>File Size</th>
-                                            <th class='text-center'>Status</th>
-                                            <th class='text-center'>Update</th>
-                                            <th class='text-center'>Update</th>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Default box -->
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"> Notes</h3>
+                                    <a class="btn btn-social-icon btn-primary pull-right" style="margin:5px" title="Add Notes" data-toggle="modal" data-target="#modaladdnotes"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="alert " id="alertclass" style="display: none">
+                                    <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
+                                    <p id="msg"></p>
+                                </div>
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <div class="box-body  table-responsive">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>Id</th>
+                                                <th class='text-center'>Staff Name</th>
+                                                <th class='text-center'>Subject Name</th>
+                                                <th class='text-center'>Class</th>
+                                                <th class='text-center'>File Name</th>
+                                                <th class='text-center'>File Type</th>
+                                                <th class='text-center'>File Size</th>
+                                                <th class='text-center'>Status</th>
+                                                <th class='text-center'>Update</th>
+                                                <th class='text-center'>Update</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tbody">
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody">
 
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th class='text-center'>Id</th>
-                                            <th class='text-center'>Staff Name</th>
-                                            <th class='text-center'>Subject Name</th>
-                                            <th class='text-center'>Class</th>
-                                            <th class='text-center'>File Name</th>
-                                            <th class='text-center'>File Type</th>
-                                            <th class='text-center'>File Size</th>
-                                            <th class='text-center'>Status</th>
-                                            <th class='text-center'>Update</th>
-                                            <th class='text-center'>Update</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th class='text-center'>Id</th>
+                                                <th class='text-center'>Staff Name</th>
+                                                <th class='text-center'>Subject Name</th>
+                                                <th class='text-center'>Class</th>
+                                                <th class='text-center'>File Name</th>
+                                                <th class='text-center'>File Type</th>
+                                                <th class='text-center'>File Size</th>
+                                                <th class='text-center'>Status</th>
+                                                <th class='text-center'>Update</th>
+                                                <th class='text-center'>Update</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
                             </div>
+                            <!-- /.box-body -->
+                            <!-- /.box-footer-->
                         </div>
-                        <!-- /.box-body -->
-                        <!-- /.box-footer-->
                     </div>
-                </div>
-            </section>
-            <!-- /.content -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
         </div>
-        <!-- /.content-wrapper -->
         <!-- Add notes User modal -->
         <form id="addnotes" action="" method="post" enctype="multipart/form-data">
             <div class="modal fade" id="modaladdnotes" style="display: none;">
@@ -349,13 +351,12 @@ if (isset($_POST['Add'])) {
                                 '<td class="text-center">' + value.status + '</td>' +
                                 '<td class="text-center">' + viewtext + update + '</td>' +
                                 '<td class="text-center"><div class="id' + srno + '"></div></td>' +
-                                '</tr>';                            
-                            $('#example1 tbody').append(html);    
-                            
-                            alert($(location).attr('hostname')+'/notes/' + value.filename);
-                            
-                            $('.id'+srno).qrcode({
-                                text: 'http://'+$(location).attr('hostname')+'/notes/' + value.filename,  
+                                '</tr>';
+                            $('#example1 tbody').append(html);
+                           
+
+                            $('.id' + srno).qrcode({
+                                text: 'http://' + $(location).attr('hostname') + '/notes/' + value.filename,
                                 size: 100
 
                             });

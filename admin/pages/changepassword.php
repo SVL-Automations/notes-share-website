@@ -68,7 +68,7 @@ if (isset($_POST['changepassword'])) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition <?= $skincolor ?> sidebar-mini">
+<body class="hold-transition <?= $skincolor ?> layout-top-nav">
   <!-- Site wrapper -->
   <div class="wrapper">
 
@@ -76,59 +76,61 @@ if (isset($_POST['changepassword'])) {
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h4>
-          <?= $project ?>
-          <small><?= $slogan ?></small>
-        </h4>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Admin</a></li>
-          <li class="active">Change Password</li>
-        </ol>
-      </section>
+      <div class="container">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h4>
+            <?= $project ?>
+            <small><?= $slogan ?></small>
+          </h4>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Admin</a></li>
+            <li class="active">Change Password</li>
+          </ol>
+        </section>
 
-      <!-- Main content -->
-      <section class="content">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-6">
-            <!-- general form elements -->
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">Change Password</h3>
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
+            <!-- left column -->
+            <div class="col-md-6">
+              <!-- general form elements -->
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Change Password</h3>
+                </div>
+                <div class="alert " id="alertclass" style="display: none">
+                  <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
+                  <p id="msg"></p>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" id="changepassword" action="" method="post">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Enter Password" required name="password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Re-type Password</label>
+                      <input type="password" class="form-control" id="retypepassword" placeholder="Enter Re-type Password" required name="repassword">
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                      <input type="hidden" name="changepassword" value="changepassword" id="type">
+                      <button type="submit" class="btn btn-success" onclick="return validate()" name="submit">Submit</button>
+                      <button type="reset" class="btn btn-warning">Reset</button>
+                    </div>
+                </form>
               </div>
-              <div class="alert " id="alertclass" style="display: none">
-                <button type="button" class="close" onclick="$('#alertclass').hide()">×</button>
-                <p id="msg"></p>
-              </div>
-              <!-- /.box-header -->
-              <!-- form start -->
-              <form role="form" id="changepassword" action="" method="post">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter Password" required name="password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Re-type Password</label>
-                    <input type="password" class="form-control" id="retypepassword" placeholder="Enter Re-type Password" required name="repassword">
-                  </div>
-                  <!-- /.box-body -->
-                  <div class="box-footer">
-                    <input type="hidden" name="changepassword" value="changepassword" id="type">
-                    <button type="submit" class="btn btn-success" onclick="return validate()" name="submit">Submit</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
-                  </div>
-              </form>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- /.content -->
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
     </div>
-    <!-- /.content-wrapper -->
 
     <?php include("footer.php"); ?>
 
