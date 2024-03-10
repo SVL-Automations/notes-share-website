@@ -134,7 +134,7 @@ if (isset($_POST['data'])) {
                 <div class="icon">
                   <i class="fa fa-group"></i>
                 </div>
-                <a href="rptstaff.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="rptfaculty.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

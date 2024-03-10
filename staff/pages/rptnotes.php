@@ -438,8 +438,7 @@ if (isset($_POST['Add'])) {
                         if (returnedData['value'] == 1) {
                             $('#alertclass').addClass(returnedData['type']);
                             $('#msg').append(returnedData['data']);
-                            $("#alertclass").show();
-                            tabledata();
+                            $("#alertclass").show();                           
                         } else {
                             $('#alertclass').addClass(returnedData['type']);
                             $('#msg').append(returnedData['data']);

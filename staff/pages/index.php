@@ -96,7 +96,7 @@ if (isset($_POST['data'])) {
                 <div class="icon">
                   <i class="fa fa-sign-in"></i>
                 </div>
-                <a href="rptattendance.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="rptnotes.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
 
@@ -111,7 +111,7 @@ if (isset($_POST['data'])) {
                 <div class="icon">
                   <i class="fa fa-sign-out"></i>
                 </div>
-                <a href="rptattendance.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="rptsubject.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
